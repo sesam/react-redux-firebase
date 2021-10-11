@@ -1,12 +1,12 @@
 import React from 'react'
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { branch, renderComponent } from 'recompose';
+import { branch, renderComponent, withHandlers } from 'recompose';
 import { isLoaded, isEmpty, firebaseConnect } from 'react-redux-firebase';
 import { View, Text, StyleSheet, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { spinnerWhileLoading } from './utils';
 import NewTodo from './NewTodo';
-import Todos from './Todos';
+// import Todos from './Todos';
 
 const enhnace = compose(
   // Create listener for todos path when component mounts
@@ -29,7 +29,7 @@ const enhnace = compose(
   branch(
     ({ todos }) => !todos || !todos.length,
     renderComponent(
-      <View style={styles.container}>
+      <View>
         <Text>No Todos Found</Text>
       </View>
     )

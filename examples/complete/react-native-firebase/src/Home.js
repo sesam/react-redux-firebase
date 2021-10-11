@@ -1,6 +1,7 @@
 import React from 'react'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
+import { withHandlers, withStateHandlers } from 'recompose';
 import { isLoaded, isEmpty, firebaseConnect } from 'react-redux-firebase'
 import {
   View,
@@ -12,7 +13,7 @@ import {
 import NewTodo from './NewTodo'
 import TodosList from './TodosList'
 
-const enhnace = compose(
+const enhance = compose(
   connect(({ firebase: { auth } }) => ({
     uid: auth.uid
   })),

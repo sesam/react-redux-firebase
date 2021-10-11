@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import React from 'react'
 import PropTypes from 'prop-types'
 import { pick, some } from 'lodash'
 import { ActivityIndicator } from 'react-native';
